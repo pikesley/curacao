@@ -5,11 +5,6 @@ describe 'Matcher' do
       expect('matcher').to have_content 'A string'
     end
 
-    it 'recognises an aliased name' do
-      dump 'A string'
-      expect('matcher').to with_content 'A string'
-    end
-
     it 'matches two strings ignoring extra whitespace' do
       dump ' Leading space'
       expect('matcher').to have_content 'Leading space'

@@ -1,17 +1,3 @@
-RSpec.configure do |config|
-  # Use tmp/ to write files
-  $pwd = FileUtils.pwd
-  config.before(:each) do
-    FileUtils.rm_rf 'tmp'
-    FileUtils.mkdir_p 'tmp'
-    FileUtils.cd 'tmp'
-  end
-
-  config.after(:each) do
-    FileUtils.cd $pwd
-  end
-end
-
 RSpec::Matchers.define :have_content do |expected|
   match do |actual|
     actual = File.read actual
@@ -37,7 +23,6 @@ RSpec::Matchers.define :have_content do |expected|
     'matches file content against expectation'
   end
 end
-RSpec::Matchers.alias_matcher :with_content, :have_content
 
 class String
   def contentise

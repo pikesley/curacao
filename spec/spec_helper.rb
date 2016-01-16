@@ -22,4 +22,10 @@ require 'curacao'
 #  end
 #end
 
-Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f}
+class Writer
+  def self.write words, path = 'written'
+    File.open path, 'w' do |f|
+      f.write words
+    end
+  end
+end
