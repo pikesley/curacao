@@ -20,4 +20,25 @@ describe String do
       expect('/Monorail/'.matches 'Lyle Lanley').to be false
     end
   end
+
+  it 'turns a string into a contentised array' do
+    expect(
+    """
+    This
+  is some
+      text
+
+    that was
+    a blank line
+    """.contentise
+    ).to eq (
+      [
+        'This',
+        'is some',
+        'text',
+        'that was',
+        'a blank line'
+      ]
+    )
+  end
 end
