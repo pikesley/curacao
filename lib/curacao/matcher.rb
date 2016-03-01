@@ -1,5 +1,6 @@
 require 'curacao/matcher/have_content'
 require 'curacao/matcher/produce_file'
+require 'curacao/matcher/exit_with_status'
 
 RSpec.configure do |config|
   # Use tmp/ to write files
