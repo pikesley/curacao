@@ -11,3 +11,11 @@ class Writer
     end
   end
 end
+
+class Exiter
+  def self.exit status, message: nil, error_message: nil
+    STDOUT.puts message if message
+    STDERR.puts error_message if error_message
+    exit status
+  end
+end

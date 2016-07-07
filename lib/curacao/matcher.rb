@@ -6,7 +6,7 @@ RSpec.configure do |config|
   # Use tmp/ to write files
   $pwd = FileUtils.pwd
   config.before(:each) do
-    tmp_path = File.join(File.dirname(__FILE__), '..', '..', 'tmp')
+    tmp_path = File.join(FileUtils.pwd, 'tmp', 'curacao')
     FileUtils.rm_rf tmp_path
     FileUtils.mkdir_p tmp_path
     FileUtils.cd tmp_path
